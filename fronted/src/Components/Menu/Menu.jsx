@@ -161,7 +161,7 @@ function Menu() {
                           eaque
                         </p>
                         <div className="options">
-                          <h6>$20</h6>
+                          <h6>Rs.20</h6>
                           <a href="">
                             <svg
                               version="1.1"
@@ -238,7 +238,7 @@ function Menu() {
                           eaque
                         </p>
                         <div className="options">
-                          <h6>$15</h6>
+                          <h6>Rs.15</h6>
                           <a href="">
                             <svg
                               version="1.1"
@@ -315,7 +315,7 @@ function Menu() {
                           eaque
                         </p>
                         <div className="options">
-                          <h6>$17</h6>
+                          <h6>Rs.17</h6>
                           <a href="">
                             <svg
                               version="1.1"
@@ -392,7 +392,7 @@ function Menu() {
                           eaque
                         </p>
                         <div className="options">
-                          <h6>$18</h6>
+                          <h6>Rs.18</h6>
                           <a href="">
                             <svg
                               version="1.1"
@@ -469,7 +469,7 @@ function Menu() {
                           eaque
                         </p>
                         <div className="options">
-                          <h6>$10</h6>
+                          <h6>Rs.10</h6>
                           <a href="">
                             <svg
                               version="1.1"
@@ -546,7 +546,7 @@ function Menu() {
                           eaque
                         </p>
                         <div className="options">
-                          <h6>$15</h6>
+                          <h6>Rs.15</h6>
                           <a href="">
                             <svg
                               version="1.1"
@@ -623,7 +623,7 @@ function Menu() {
                           eaque
                         </p>
                         <div className="options">
-                          <h6>$12</h6>
+                          <h6>Rs.12</h6>
                           <a href="">
                             <svg
                               version="1.1"
@@ -700,7 +700,7 @@ function Menu() {
                           eaque
                         </p>
                         <div className="options">
-                          <h6>$14</h6>
+                          <h6>Rs.14</h6>
                           <a href="">
                             <svg
                               version="1.1"
@@ -777,7 +777,7 @@ function Menu() {
                           eaque
                         </p>
                         <div className="options">
-                          <h6>$10</h6>
+                          <h6>Rs.10</h6>
                           <a href="">
                             <svg
                               version="1.1"
