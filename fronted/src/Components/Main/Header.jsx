@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
+  let [activeFilter, setActiveFilter] = useState("Home");
+
+  let [userData, setUserData] = useState(
+    JSON.parse(localStorage.getItem("userData"))
+  );
+  let [isLogin, setIsLogin] = useState(userData ? true : false);
+  const handleLogout = () => {
+    localStorage.removeItem("userData");
+  };
+  const handleFilter = (filter) => {
+    setActiveFilter(filter);
+  };
   return (
     <>
       <div className="hero_area">
@@ -30,31 +43,54 @@ function Header() {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav  mx-auto ">
-                  <li className="nav-item active">
+                  <li
+                    className={`nav-item ${
+                      activeFilter === "Home" ? "active" : ""
+                    }`}
+                    onClick={() => handleFilter("Home")}
+                  >
                     <a className="nav-link" href="index.html">
                       Home <span className="sr-only">(current)</span>
                     </a>
                   </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="menu.html">
+                  <li
+                    className={`nav-item ${
+                      activeFilter === "Menu" ? "active" : ""
+                    }`}
+                  >
+                    <Link
+                      className="nav-link"
+                      to="/menu.html"
+                      onClick={() => handleFilter("Menu")}
+                    >
                       Menu
-                    </a>
+                    </Link>
                   </li>
-                  <li className="nav-item">
+                  <li
+                    className={`nav-item ${
+                      activeFilter === "About" ? "active" : ""
+                    }`}
+                    onClick={() => handleFilter("About")}
+                  >
                     <a className="nav-link" href="about.html">
                       About
                     </a>
                   </li>
-                  <li className="nav-item">
+                  <li
+                    className={`nav-item ${
+                      activeFilter === "Book" ? "active" : ""
+                    }`}
+                    onClick={() => handleFilter("Book")}
+                  >
                     <a className="nav-link" href="book.html">
                       Book Table
                     </a>
                   </li>
                 </ul>
                 <div className="user_option">
-                  <a href="" className="user_link">
+                  {/* <a href="" className="user_link">
                     <i className="fa fa-user" aria-hidden="true" />
-                  </a>
+                  </a> */}
                   <a className="cart_link" href="#">
                     <svg
                       version="1.1"
@@ -121,6 +157,21 @@ function Header() {
                   <a href="" className="order_online">
                     Order Online
                   </a>
+                  <div>
+                    {isLogin ? (
+                      <Link
+                        to="/index.html"
+                        className="order_online"
+                        onClick={handleLogout}
+                      >
+                        Logout
+                      </Link>
+                    ) : (
+                      <Link to="/Signin" className="order_online">
+                        Sign in
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
             </nav>
@@ -225,3 +276,5 @@ function Header() {
 }
 
 export default Header;
+
+

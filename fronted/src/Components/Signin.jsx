@@ -1,24 +1,41 @@
 // src/SignIn.js
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    //
+    const response = await fetch("http://localhost:8000/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    const jsonResponse = await response.json();
+    console.log(jsonResponse.data);
+    console.log("ok ka response", response.ok);
+    if (!response.ok) {
+      alert("username and password not valid");
+    } else {
+      localStorage.setItem("userData", JSON.stringify(jsonResponse));
+      navigate("/index.html");
+    }
   };
 
   return (
@@ -55,8 +72,14 @@ const SignIn = () => {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary btn-block">Sign In</button>
+                <button type="submit" className="btn btn-primary btn-block">
+                  Sign In
+                </button>
               </form>
+            </div>
+            <div style={{ display: "flex" }}>
+              <p>don't have an account?</p>
+              <a href="/signup">Signup</a>
             </div>
           </div>
         </div>

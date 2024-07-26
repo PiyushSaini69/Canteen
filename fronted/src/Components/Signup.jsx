@@ -1,25 +1,39 @@
 // src/Signup.js
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: ''
+    username: "",
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    //
+    // console.log(formData)
+    const response = await fetch("http://localhost:8000/users/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    const jsonResponse = await response.json();
+    if (!response.ok) {
+      alert("username and password not valid");
+    } else {
+      navigate("/Signin");
+
+    }
   };
 
   return (
@@ -38,8 +52,8 @@ const Signup = () => {
                     type="text"
                     className="form-control"
                     id="name"
-                    name="name"
-                    value={formData.name}
+                    name="username"
+                    value={formData.username}
                     onChange={handleChange}
                     required
                   />
@@ -68,8 +82,14 @@ const Signup = () => {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+                <button type="submit" className="btn btn-primary btn-block">
+                  Sign Up
+                </button>
               </form>
+            </div>
+            <div style={{ display: "flex" }}>
+              <p>already have an account?</p>
+              <a href="/signin">Signin</a>
             </div>
           </div>
         </div>

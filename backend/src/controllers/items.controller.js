@@ -25,8 +25,8 @@ const createItem = asyncHandler(async (req, res) => {
 })
 
 const allItem = asyncHandler(async (req, res) => {
-
     const itemData = await Items.find({})
+    
     return res.status(201).json(
         new ApiResponse(200, itemData, "Item data Successfully")
     )

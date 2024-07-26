@@ -1,36 +1,59 @@
 // src/AddItem.js
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const AddItem = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    description: '',
-    price: '',
-    category: '',
-    imageUrl: '',
-    available: true
+    name: "",
+    description: "",
+    price: "",
+    category: "",
+    imageUrl: "",
+    available: true,
   });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     });
   };
 
   const handleFileChange = (e) => {
     setFormData({
       ...formData,
-      imageUrl: e.target.files[0]
+      imageUrl: e.target.files[0],
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    //
+    try {
+      const data = new FormData();
+
+      // Append form data
+      data.append("name", formData.name);
+      data.append("description", formData.description);
+      data.append("price", formData.price);
+      data.append("category", formData.category);
+      data.append("available", formData.available);
+      data.append("imageUrl", formData.imageUrl);
+      const response = await fetch("http://localhost:8000/items/createitem", {
+        method: "POST",
+        body: data,
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const result = await response.json();
+      console.log("Success:", result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+    //
   };
 
   return (
