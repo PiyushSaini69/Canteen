@@ -11,9 +11,7 @@ function Book() {
             <img src="images/hero-bg.jpg" alt="" />
           </div>
           {/* header section strats */}
-<<<<<<< HEAD
           <Header/>
-=======
           <header className="header_section">
             <div className="container">
               <nav className="navbar navbar-expand-lg custom_nav-container ">
@@ -132,7 +130,6 @@ function Book() {
               </nav>
             </div>
           </header>
->>>>>>> c6397bf24022f3306cdef23f3df4d150d7aa5bbf
           {/* end header section */}
         </div>
         {/* book section */}
