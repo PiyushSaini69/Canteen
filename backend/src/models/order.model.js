@@ -42,6 +42,14 @@ const orderSchema = new Schema({
         type: Date,
         default: Date.now,
     },
+    latitude: {
+        type: String,
+        required: true,
+    },
+    longitude: {
+        type: String,
+        required: true,
+    },
 }, {
     timestamps: true,
 });
