@@ -34,7 +34,7 @@ function Food() {
     setCartData((previousData) => {
       // Check if item already exists in cart
       if (!previousData.includes(itemId)) {
-        return [...previousData, itemId];
+        return [...previousData, { ...itemId, quantity: 1 }];
       }
       return previousData;
     });

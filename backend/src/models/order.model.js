@@ -8,10 +8,6 @@ const orderSchema = new Schema({
         ref: 'User',
         required: true,
     },
-    // shippingAddress: {
-    //     type: String,
-    //     required: true,
-    // },
     orderItems: [
         {
             itemId: {

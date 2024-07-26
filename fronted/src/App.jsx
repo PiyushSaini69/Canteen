@@ -7,6 +7,7 @@ import Menu from "./Components/Menu/Menu";
 import Additem from "./Components/Additem";
 import Signup from './Components/Signup'
 import Signin from "./Components/Signin";
+import CartData from "./Components/CartData";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Signin" element={<Signin />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Additem" element={<Additem/>} />
+          <Route path="/CartData" element={<CartData/>} />
         {/* <Route
           path="/employment"
           element={<PrivateRoute element={<Employment />} />}

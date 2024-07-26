@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Table, Button } from "react-bootstrap";
 
 function Header() {
-  const [showCart, setShowCart] = useState(false);
+  const navigate = useNavigate();
   const [cartData, setCartData] = useState(() => {
     const savedCart = localStorage.getItem("cartItem");
     return savedCart ? JSON.parse(savedCart) : [];
@@ -21,7 +22,7 @@ function Header() {
     setActiveFilterData(filter);
   };
   const toggleCart = () => {
-    setShowCart(!showCart);
+    navigate('/cartdata')
   };
   return (
     <>
