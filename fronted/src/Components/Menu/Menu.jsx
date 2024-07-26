@@ -14,7 +14,7 @@ function Menu() {
             <div className="container">
               <nav className="navbar navbar-expand-lg custom_nav-container ">
                 <a className="navbar-brand" href="index.html">
-                  <span>Feane</span>
+                  <span>Crave Corner</span>
                 </a>
                 <button
                   className="navbar-toggler"
