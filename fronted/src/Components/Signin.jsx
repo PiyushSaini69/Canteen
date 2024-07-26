@@ -34,7 +34,7 @@ const SignIn = () => {
       alert("username and password not valid");
     } else {
       localStorage.setItem("userData", JSON.stringify(jsonResponse));
-      navigate("/index.html");
+      navigate("/home");
     }
   };
 

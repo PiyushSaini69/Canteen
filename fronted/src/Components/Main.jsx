@@ -36,10 +36,6 @@ function Main() {
     <>
       <main id="main">
         <Header />
-        <div>
-          <h1>latitude:{location.latitude || ""}</h1>
-          <h1>longitude:{location.longitude || ""}</h1>
-        </div>
         <Offer />
         <Food />
         <About />

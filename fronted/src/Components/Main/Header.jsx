@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 function Header() {
-  let [activeFilter, setActiveFilter] = useState("Home");
+  const location = useLocation();
+  console.log(location);
+  let [activeFilterData, setActiveFilterData] = useState(location.pathname);
 
   let [userData, setUserData] = useState(
     JSON.parse(localStorage.getItem("userData"))
@@ -12,7 +14,7 @@ function Header() {
     localStorage.removeItem("userData");
   };
   const handleFilter = (filter) => {
-    setActiveFilter(filter);
+    setActiveFilterData(filter);
   };
   return (
     <>
@@ -24,9 +26,9 @@ function Header() {
         <header className="header_section">
           <div className="container">
             <nav className="navbar navbar-expand-lg custom_nav-container ">
-              <a className="navbar-brand" href="index.html">
+              <Link className="navbar-brand" to="/home">
                 <span>Crave Corner</span>
-              </a>
+              </Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -45,22 +47,22 @@ function Header() {
                 <ul className="navbar-nav  mx-auto ">
                   <li
                     className={`nav-item ${
-                      activeFilter === "Home" ? "active" : ""
+                      activeFilterData === "/home" ? "active" : ""
                     }`}
                     onClick={() => handleFilter("Home")}
                   >
-                    <a className="nav-link" href="index.html">
-                      Home <span className="sr-only">(current)</span>
-                    </a>
+                    <Link className="nav-link" to="/home">
+                      Home
+                    </Link>
                   </li>
                   <li
                     className={`nav-item ${
-                      activeFilter === "Menu" ? "active" : ""
+                      activeFilterData === "/menu" ? "active" : ""
                     }`}
                   >
                     <Link
                       className="nav-link"
-                      to="/menu.html"
+                      to="/menu"
                       onClick={() => handleFilter("Menu")}
                     >
                       Menu
@@ -68,23 +70,23 @@ function Header() {
                   </li>
                   <li
                     className={`nav-item ${
-                      activeFilter === "About" ? "active" : ""
+                      activeFilterData === "/about" ? "active" : ""
                     }`}
                     onClick={() => handleFilter("About")}
                   >
-                    <a className="nav-link" href="about.html">
+                    <Link className="nav-link" to="/about">
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className={`nav-item ${
-                      activeFilter === "Book" ? "active" : ""
+                      activeFilterData === "/book" ? "active" : ""
                     }`}
                     onClick={() => handleFilter("Book")}
                   >
-                    <a className="nav-link" href="book.html">
+                    <Link className="nav-link" to="/book">
                       Book Table
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <div className="user_option">
@@ -154,7 +156,11 @@ function Header() {
                       <i className="fa fa-search" aria-hidden="true" />
                     </button>
                   </form> */}
-                  <a href="" className="order_online" style={{ textDecoration: 'none' }}>
+                  <a
+                    href=""
+                    className="order_online"
+                    style={{ textDecoration: "none" }}
+                  >
                     Order Online
                   </a>
                   <div>
@@ -193,10 +199,20 @@ function Header() {
                       <div className="detail-box">
                         <h1>Welcome to Crave Corner</h1>
                         <p>
-                        "Crave Corner" is a user-friendly canteen website that allows users to browse menus, place orders, and make payments online. It offers personalized recommendations, nutritional information, and real-time updates, making it a convenient and satisfying dining experience for students, faculty, and staff.
+                          "Crave Corner" is a user-friendly canteen website that
+                          allows users to browse menus, place orders, and make
+                          payments online. It offers personalized
+                          recommendations, nutritional information, and
+                          real-time updates, making it a convenient and
+                          satisfying dining experience for students, faculty,
+                          and staff.
                         </p>
                         <div className="btn-box">
-                          <a href="" className="btn1" style={{ textDecoration: 'none' }}>
+                          <a
+                            href=""
+                            className="btn1"
+                            style={{ textDecoration: "none" }}
+                          >
                             Order Now
                           </a>
                         </div>
@@ -212,10 +228,18 @@ function Header() {
                       <div className="detail-box">
                         <h1>Crave Corner Serves </h1>
                         <p>
-                        "Crave Corner" offers online ordering, payment, and menu browsing. It also provides nutritional information, customization options, order tracking, feedback mechanisms, and loyalty programs, making it a convenient and user-friendly platform for customers.
+                          "Crave Corner" offers online ordering, payment, and
+                          menu browsing. It also provides nutritional
+                          information, customization options, order tracking,
+                          feedback mechanisms, and loyalty programs, making it a
+                          convenient and user-friendly platform for customers.
                         </p>
                         <div className="btn-box">
-                          <a href="" className="btn1" style={{ textDecoration: 'none' }}>
+                          <a
+                            href=""
+                            className="btn1"
+                            style={{ textDecoration: "none" }}
+                          >
                             Order Now
                           </a>
                         </div>
@@ -231,10 +255,18 @@ function Header() {
                       <div className="detail-box">
                         <h1>Crave Corner Provides</h1>
                         <p>
-                        "Crave Corner" provides features like menu management, inventory tracking, sales reporting, customer management, and integration with payment gateways, making it a comprehensive solution for canteen management and online food ordering.
+                          "Crave Corner" provides features like menu management,
+                          inventory tracking, sales reporting, customer
+                          management, and integration with payment gateways,
+                          making it a comprehensive solution for canteen
+                          management and online food ordering.
                         </p>
                         <div className="btn-box">
-                          <a href="" className="btn1" style={{ textDecoration: 'none' }}>
+                          <a
+                            href=""
+                            className="btn1"
+                            style={{ textDecoration: "none" }}
+                          >
                             Order Now
                           </a>
                         </div>
@@ -264,5 +296,3 @@ function Header() {
 }
 
 export default Header;
-
-
