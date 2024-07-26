@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 function Header() {
+  const [showCart, setShowCart] = useState(false);
+  const [cartData, setCartData] = useState(() => {
+    const savedCart = localStorage.getItem("cartItem");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
   const location = useLocation();
-  console.log(location);
   let [activeFilterData, setActiveFilterData] = useState(location.pathname);
 
   let [userData, setUserData] = useState(
@@ -15,6 +19,9 @@ function Header() {
   };
   const handleFilter = (filter) => {
     setActiveFilterData(filter);
+  };
+  const toggleCart = () => {
+    setShowCart(!showCart);
   };
   return (
     <>
@@ -93,7 +100,7 @@ function Header() {
                   {/* <a href="" className="user_link">
                     <i className="fa fa-user" aria-hidden="true" />
                   </a> */}
-                  <a className="cart_link" href="#">
+                  <a className="cart_link" href="#" onClick={toggleCart}>
                     <svg
                       version="1.1"
                       id="Capa_1"
@@ -147,6 +154,11 @@ function Header() {
                       <g></g>
                       <g></g>
                     </svg>
+                    {cartData.length > 0 && (
+                      <span className="badge badge-pill badge-danger">
+                        {cartData.length}
+                      </span>
+                    )}
                   </a>
                   {/* <form className="form-inline">
                     <button

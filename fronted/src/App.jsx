@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import Main from "./Components/Main";
-import Book from "./Components/Book/Book";
+import BookTable from "./Components/Book/BookTable";
 import About from "./Components/About/About";
 import Menu from "./Components/Menu/Menu";
 import Additem from "./Components/Additem";
@@ -13,7 +13,7 @@ function App() {
     <>
       <Routes>
         <Route path="/home" element={<Main />} />
-        <Route path="/book" element={<Book />} />
+        <Route path="/book" element={<BookTable />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/Signin" element={<Signin />} />

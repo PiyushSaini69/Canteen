@@ -28,8 +28,6 @@ const SignIn = () => {
       body: JSON.stringify(formData),
     });
     const jsonResponse = await response.json();
-    console.log(jsonResponse.data);
-    console.log("ok ka response", response.ok);
     if (!response.ok) {
       alert("username and password not valid");
     } else {

@@ -1,9 +1,9 @@
 import React from "react";
 import Footer from "../Main/Footer";
 import Header from "../Main/Header";
-import Food from "../Main/Food";
+import Book from "../Main/Book";
 
-function Menu() {
+function BookTable() {
   return (
     <>
       <div className="sub_page">
@@ -15,9 +15,9 @@ function Menu() {
           <Header />
           {/* end header section */}
         </div>
-        {/* food section */}
-        <Food />
-        {/* end food section */}
+        {/* book section */}
+        <Book />
+        {/* end book section */}
         {/* footer section */}
         <Footer />
       </div>
@@ -25,4 +25,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export default BookTable;

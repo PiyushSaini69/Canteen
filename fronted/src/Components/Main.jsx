@@ -31,7 +31,6 @@ function Main() {
     getLocation();
   }, []);
 
-  console.log(location);
   return (
     <>
       <main id="main">
