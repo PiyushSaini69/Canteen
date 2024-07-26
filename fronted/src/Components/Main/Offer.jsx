@@ -17,7 +17,7 @@ function Offer() {
                     <h6>
                       <span>20%</span> Off
                     </h6>
-                    <a href="">
+                    <a href="" style={{ textDecoration: 'none' }}>
                       Order Now{" "}
                       <svg
                         version="1.1"
@@ -86,7 +86,7 @@ function Offer() {
                     <h6>
                       <span>15%</span> Off
                     </h6>
-                    <a href="">
+                    <a href="" style={{ textDecoration: 'none' }}>
                       Order Now{" "}
                       <svg
                         version="1.1"

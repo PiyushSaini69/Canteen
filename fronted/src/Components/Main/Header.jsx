@@ -25,7 +25,7 @@ function Header() {
           <div className="container">
             <nav className="navbar navbar-expand-lg custom_nav-container ">
               <a className="navbar-brand" href="index.html">
-                <span>Feane</span>
+                <span>Crave Corner</span>
               </a>
               <button
                 className="navbar-toggler"
@@ -154,7 +154,7 @@ function Header() {
                       <i className="fa fa-search" aria-hidden="true" />
                     </button>
                   </form> */}
-                  <a href="" className="order_online">
+                  <a href="" className="order_online" style={{ textDecoration: 'none' }}>
                     Order Online
                   </a>
                   <div>
@@ -191,16 +191,12 @@ function Header() {
                   <div className="row">
                     <div className="col-md-7 col-lg-6 ">
                       <div className="detail-box">
-                        <h1>Fast Food Restaurant</h1>
+                        <h1>Welcome to Crave Corner</h1>
                         <p>
-                          Doloremque, itaque aperiam facilis rerum, commodi,
-                          temporibus sapiente ad mollitia laborum quam quisquam
-                          esse error unde. Tempora ex doloremque, labore, sunt
-                          repellat dolore, iste magni quos nihil ducimus libero
-                          ipsam.
+                        "Crave Corner" is a user-friendly canteen website that allows users to browse menus, place orders, and make payments online. It offers personalized recommendations, nutritional information, and real-time updates, making it a convenient and satisfying dining experience for students, faculty, and staff.
                         </p>
                         <div className="btn-box">
-                          <a href="" className="btn1">
+                          <a href="" className="btn1" style={{ textDecoration: 'none' }}>
                             Order Now
                           </a>
                         </div>
@@ -214,16 +210,12 @@ function Header() {
                   <div className="row">
                     <div className="col-md-7 col-lg-6 ">
                       <div className="detail-box">
-                        <h1>Fast Food Restaurant</h1>
+                        <h1>Crave Corner Serves </h1>
                         <p>
-                          Doloremque, itaque aperiam facilis rerum, commodi,
-                          temporibus sapiente ad mollitia laborum quam quisquam
-                          esse error unde. Tempora ex doloremque, labore, sunt
-                          repellat dolore, iste magni quos nihil ducimus libero
-                          ipsam.
+                        "Crave Corner" offers online ordering, payment, and menu browsing. It also provides nutritional information, customization options, order tracking, feedback mechanisms, and loyalty programs, making it a convenient and user-friendly platform for customers.
                         </p>
                         <div className="btn-box">
-                          <a href="" className="btn1">
+                          <a href="" className="btn1" style={{ textDecoration: 'none' }}>
                             Order Now
                           </a>
                         </div>
@@ -237,16 +229,12 @@ function Header() {
                   <div className="row">
                     <div className="col-md-7 col-lg-6 ">
                       <div className="detail-box">
-                        <h1>Fast Food Restaurant</h1>
+                        <h1>Crave Corner Provides</h1>
                         <p>
-                          Doloremque, itaque aperiam facilis rerum, commodi,
-                          temporibus sapiente ad mollitia laborum quam quisquam
-                          esse error unde. Tempora ex doloremque, labore, sunt
-                          repellat dolore, iste magni quos nihil ducimus libero
-                          ipsam.
+                        "Crave Corner" provides features like menu management, inventory tracking, sales reporting, customer management, and integration with payment gateways, making it a comprehensive solution for canteen management and online food ordering.
                         </p>
                         <div className="btn-box">
-                          <a href="" className="btn1">
+                          <a href="" className="btn1" style={{ textDecoration: 'none' }}>
                             Order Now
                           </a>
                         </div>

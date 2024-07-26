@@ -10,15 +10,15 @@ function Footer() {
               <div className="footer_contact">
                 <h4>Contact Us</h4>
                 <div className="contact_link_box">
-                  <a href="">
+                  <a href="" style={{ textDecoration: 'none' }}>
                     <i className="fa fa-map-marker" aria-hidden="true" />
                     <span>Location</span>
                   </a>
-                  <a href="">
+                  <a href="" style={{ textDecoration: 'none' }}>
                     <i className="fa fa-phone" aria-hidden="true" />
                     <span>Call +01 1234567890</span>
                   </a>
-                  <a href="">
+                  <a href="" style={{ textDecoration: 'none' }}>
                     <i className="fa fa-envelope" aria-hidden="true" />
                     <span>demo@gmail.com</span>
                   </a>
@@ -27,8 +27,8 @@ function Footer() {
             </div>
             <div className="col-md-4 footer-col">
               <div className="footer_detail">
-                <a href="" className="footer-logo">
-                  Feane
+                <a href="" className="footer-logo" style={{ textDecoration: 'none' }}>
+                 Crave Corner
                 </a>
                 <p>
                   Necessary, making this the first true generator on the
@@ -36,19 +36,19 @@ function Footer() {
                   combined with
                 </p>
                 <div className="footer_social">
-                  <a href="">
+                  <a href=""style={{ textDecoration: 'none' }}>
                     <i className="fa fa-facebook" aria-hidden="true" />
                   </a>
-                  <a href="">
+                  <a href="" style={{ textDecoration: 'none' }}>
                     <i className="fa fa-twitter" aria-hidden="true" />
                   </a>
-                  <a href="">
+                  <a href="" style={{ textDecoration: 'none' }}>
                     <i className="fa fa-linkedin" aria-hidden="true" />
                   </a>
-                  <a href="">
+                  <a href="" style={{ textDecoration: 'none' }}>
                     <i className="fa fa-instagram" aria-hidden="true" />
                   </a>
-                  <a href="">
+                  <a href="" style={{ textDecoration: 'none' }}>
                     <i className="fa fa-pinterest" aria-hidden="true" />
                   </a>
                 </div>
@@ -63,13 +63,13 @@ function Footer() {
           <div className="footer-info">
             <p>
               © <span id="displayYear" /> All Rights Reserved By
-              <a href="https://html.design/">Free Html Templates</a>
+              <a href="https://html.design/"  style={{ textDecoration: 'none' }}> Crave Corner</a>
               <br />
               <br />
-              © <span id="displayYear" /> Distributed By
+              {/* © <span id="displayYear" /> Distributed By
               <a href="https://themewagon.com/" target="_blank">
                 ThemeWagon
-              </a>
+              </a> */}
             </p>
           </div>
         </div>
