@@ -1,7 +1,9 @@
 // src/Signup.js
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignupFaculty = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -31,6 +33,7 @@ const SignupFaculty = () => {
     if (!response.ok) {
       window.alert("username and password not valid");
     } else {
+      window.alert("Successfully sign up Faculty");
       navigate("/Signin");
     }
   };

@@ -221,13 +221,13 @@ function Header() {
                           and staff.
                         </p>
                         <div className="btn-box">
-                          <a
-                            href=""
+                          <Link
+                            to="/cartdata"
                             className="btn1"
                             style={{ textDecoration: "none" }}
                           >
                             Order Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -275,13 +275,13 @@ function Header() {
                           management and online food ordering.
                         </p>
                         <div className="btn-box">
-                          <a
-                            href=""
+                          <Link
+                            to="/cartdata"
                             className="btn1"
                             style={{ textDecoration: "none" }}
                           >
                             Order Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
