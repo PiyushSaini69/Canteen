@@ -37,6 +37,14 @@ const orderCreated = asyncHandler(async (req, res) => {
     }
 
 })
+const allorder = asyncHandler(async (req, res) => {
+    const orderData = await Order.find({})
+    return res.status(200).json(
+        new ApiResponse(200, orderData, "Order data Successfully")
+    )
+
+})
 export {
     orderCreated,
+    allorder
 }

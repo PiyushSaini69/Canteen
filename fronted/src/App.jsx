@@ -9,6 +9,7 @@ import Signup from './Components/Signup'
 import Signin from "./Components/Signin";
 import CartData from "./Components/CartData";
 import SignupFaculty from "./Components/SignupFaculty";
+import Kitchen from "./Components/Kitchen";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/Additem" element={<Additem/>} />
           <Route path="/CartData" element={<CartData/>} />
           <Route path="/Faculty_register" element={<SignupFaculty/>} />
+          <Route path="/kitchen" element={<Kitchen/>} />
         {/* <Route
           path="/employment"
           element={<PrivateRoute element={<Employment />} />}
