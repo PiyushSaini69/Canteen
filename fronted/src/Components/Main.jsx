@@ -7,6 +7,14 @@ import Footer from "./Main/Footer";
 import Header from "./Main/Header";
 import Offer from "./Main/Offer";
 function Main() {
+  useEffect(() => {
+    const fetchData = () => {
+      const textToSpeak = "Welcome all Welcome all Welcome all ";
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      window.speechSynthesis.speak(utterance);
+    };
+    fetchData();
+  }, []);
   return (
     <>
       <main id="main">
