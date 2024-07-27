@@ -30,10 +30,14 @@ const Signup = () => {
     });
     const jsonResponse = await response.json();
     if (!response.ok) {
-      window.alert("username and password not valid");
+      window.alert("Already Registered");
     } else {
       window.alert("Successfully sign up user");
       navigate("/Signin");
+      // window.alert("Registered Successfully");
+      // navigate("/Signin");
+      
+
     }
   };
 

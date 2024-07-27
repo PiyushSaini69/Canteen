@@ -13,7 +13,7 @@ function Offer() {
                     <img src="images/o1.jpg" alt="" />
                   </div>
                   <div className="detail-box">
-                    <h5>Tasty Thursdays</h5>
+                    <h5>Saturday Special</h5>
                     <h6>
                       <span>20%</span> Off
                     </h6>
