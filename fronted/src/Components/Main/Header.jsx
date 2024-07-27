@@ -179,7 +179,7 @@ function Header() {
                   <div>
                     {isLogin ? (
                       <Link
-                        to="/index.html"
+                        to="/home"
                         className="order_online"
                         onClick={handleLogout}
                       >

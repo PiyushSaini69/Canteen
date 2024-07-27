@@ -14,15 +14,10 @@ function About() {
             <div className="col-md-6">
               <div className="detail-box">
                 <div className="heading_container">
-                  <h2>We Are Feane</h2>
+                  <h2>About Us</h2>
                 </div>
                 <p>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum, you need to be sure there isn't anything
-                  embarrassing hidden in the middle of text. All
+                "Crave Corner" is a user-friendly canteen website that allows users to browse menus, place orders, and make payments online. It offers personalized recommendations, nutritional information, and real-time updates, making it a convenient and satisfying dining experience for students, faculty, and staff
                 </p>
                 <a href="" style={{ textDecoration: 'none' }}>Read More</a>
               </div>
