@@ -28,7 +28,7 @@ const Signup = () => {
     });
     const jsonResponse = await response.json();
     if (!response.ok) {
-      alert("username and password not valid");
+      window.alert("username and password not valid");
     } else {
       navigate("/Signin");
 
@@ -41,7 +41,7 @@ const Signup = () => {
         <div className="col-md-6">
           <div className="card">
             <div className="card-header">
-              <h3>Sign Up</h3>
+              <h3>Sign Up User</h3>
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit}>

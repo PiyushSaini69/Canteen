@@ -2,8 +2,14 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Table, Button, Container, Row, Col } from "react-bootstrap";
 import Header from "./Main/Header";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const CartData = () => {
+  const navigate = useNavigate();
+  const [userData, setUserData] = useState(
+    JSON.parse(localStorage.getItem("userData"))
+  );
   const [cartData, setCartData] = useState(() => {
     const savedCart = localStorage.getItem("cartItem");
     return savedCart ? JSON.parse(savedCart) : [];
@@ -26,6 +32,65 @@ const CartData = () => {
   useEffect(() => {
     localStorage.setItem("cartItem", JSON.stringify(cartData));
   }, [cartData]);
+  //
+  const [ip, setIp] = useState("");
+
+  useEffect(() => {
+    const fetchIp = async () => {
+      try {
+        const response = await axios.get("https://api.ipify.org?format=json");
+        setIp(response.data.ip);
+      } catch (error) {
+        console.error("Error fetching the IP address:", error);
+      }
+    };
+
+    fetchIp();
+  }, []);
+  const [location, setLocation] = useState({ latitude: null, longitude: null });
+
+  useEffect(() => {
+    const getLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            setLocation({
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+            });
+          },
+          (error) => {
+            console.error("Error getting location:", error);
+          }
+        );
+      } else {
+        console.error("Geolocation is not supported by this browser.");
+      }
+    };
+
+    getLocation();
+  }, []);
+  //
+  const handleOrder = async () => {
+    if (!userData || cartData.length <= 0) {
+      navigate("/signin");
+    } else {
+      const response = await fetch("http://localhost:8000/order/order_create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cartData, userData, ip, location }),
+      });
+      const jsonResponse = await response.json();
+      if (!response.ok) {
+        window.alert("cart is empty");
+      } else {
+        localStorage.setItem("cartItem",JSON.stringify([]))
+        window.alert("Order created successfully");
+      }
+    }
+  };
 
   return (
     <>
@@ -86,6 +151,15 @@ const CartData = () => {
           </Col>
         </Row>
       </Container>
+      <center style={{ margin: "100px" }}>
+        <button
+          type="button"
+          className="btn btn-success btn-lg"
+          onClick={handleOrder}
+        >
+          Order Now
+        </button>
+      </center>
     </>
   );
 };

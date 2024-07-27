@@ -1,12 +1,12 @@
-// src/SignIn.js
+// src/Signup.js
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-const SignIn = () => {
-  const navigate = useNavigate();
+const SignupFaculty = () => {
   const [formData, setFormData] = useState({
+    username: "",
     email: "",
     password: "",
+    role: "faculty",
   });
 
   const handleChange = (e) => {
@@ -20,7 +20,7 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     //
-    const response = await fetch("http://localhost:8000/users/login", {
+    const response = await fetch("http://localhost:8000/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,8 +31,7 @@ const SignIn = () => {
     if (!response.ok) {
       window.alert("username and password not valid");
     } else {
-      localStorage.setItem("userData", JSON.stringify(jsonResponse));
-      navigate("/home");
+      navigate("/Signin");
     }
   };
 
@@ -42,10 +41,22 @@ const SignIn = () => {
         <div className="col-md-6">
           <div className="card">
             <div className="card-header">
-              <h3>Sign In</h3>
+              <h3>Sign Up Faculty</h3>
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="name">Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    name="username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <input
@@ -71,17 +82,13 @@ const SignIn = () => {
                   />
                 </div>
                 <button type="submit" className="btn btn-primary btn-block">
-                  Sign In
+                  Sign Up
                 </button>
               </form>
             </div>
             <div style={{ display: "flex" }}>
-              <p>User don't have an account?</p>
-              <a href="/signup">Signup</a>
-            </div>
-            <div style={{ display: "flex" }}>
-              <p>Faculty don't have an account?</p>
-              <a href="/Faculty_register">Signup</a>
+              <p>already have an account?</p>
+              <a href="/signin">Signin</a>
             </div>
           </div>
         </div>
@@ -90,4 +97,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignupFaculty;

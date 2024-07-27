@@ -24,10 +24,12 @@ const __dirname = path.dirname(__filename);
 //routes import
 import userRouter from './routes/user.routes.js'
 import itemRouter from './routes/items.routes.js'
+import orderRouter from './routes/order.routes.js'
 
 //routes declaration
 app.use("/users", userRouter)
 app.use("/items", itemRouter)
+app.use("/order", orderRouter)
 
 app.get('/items/image/:imageName', (req, res) => {
     try {

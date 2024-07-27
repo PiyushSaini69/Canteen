@@ -22,7 +22,7 @@ function Header() {
     setActiveFilterData(filter);
   };
   const toggleCart = () => {
-    navigate('/cartdata')
+    navigate("/cartdata");
   };
   return (
     <>
@@ -169,13 +169,13 @@ function Header() {
                       <i className="fa fa-search" aria-hidden="true" />
                     </button>
                   </form> */}
-                  <a
+                  {/* <a
                     href=""
                     className="order_online"
                     style={{ textDecoration: "none" }}
                   >
                     Order Online
-                  </a>
+                  </a> */}
                   <div>
                     {isLogin ? (
                       <Link
@@ -248,13 +248,13 @@ function Header() {
                           convenient and user-friendly platform for customers.
                         </p>
                         <div className="btn-box">
-                          <a
-                            href=""
+                          <Link
+                            to="/Faculty_register"
                             className="btn1"
                             style={{ textDecoration: "none" }}
                           >
-                            Order Now
-                          </a>
+                            Register as Faculty
+                          </Link>
                         </div>
                       </div>
                     </div>

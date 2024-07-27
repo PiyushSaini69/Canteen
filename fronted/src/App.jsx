@@ -8,6 +8,7 @@ import Additem from "./Components/Additem";
 import Signup from './Components/Signup'
 import Signin from "./Components/Signin";
 import CartData from "./Components/CartData";
+import SignupFaculty from "./Components/SignupFaculty";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Additem" element={<Additem/>} />
           <Route path="/CartData" element={<CartData/>} />
+          <Route path="/Faculty_register" element={<SignupFaculty/>} />
         {/* <Route
           path="/employment"
           element={<PrivateRoute element={<Employment />} />}

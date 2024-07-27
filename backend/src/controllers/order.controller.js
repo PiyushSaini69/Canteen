@@ -7,44 +7,36 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken"
 import mongoose from "mongoose";
 
-const registerUser = asyncHandler(async (req, res) => {
-    const { email, username, password,role } = req.body
-    //console.log("email: ", email);
+const orderCreated = asyncHandler(async (req, res) => {
+    const { cartData, userData, ip, location } = req.body;
 
-    const existedUser = await User.findOne({
-        $or: [{ username }, { email }]
-    })
-    if (existedUser) {
-        return res.status(409).json(
-            new ApiError(409, "User with email or username already exists")
+    try {
+        const orderItems = cartData.map(item => ({
+            itemId: item._id,
+            quantity: item.quantity,
+            price: item.price,
+        }));
+
+        const totalPrice = cartData.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+        const newOrder = new Order({
+            userId: userData.data.user._id,
+            orderItems,
+            totalPrice,
+            latitude: location.latitude.toString(),
+            longitude: location.longitude.toString(),
+            iplocation: ip,
+        });
+        const orderData = await newOrder.save();
+
+        return res.status(201).json(
+            new ApiResponse(200, orderData, "Order created Successfully")
         )
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
     }
-    //console.log(req.files);
-    const user = await User.create({
-        email,
-        password,
-        username: username.trim().toLowerCase(),
-        role:role
-    })
-
-    const createdUser = await User.findById(user._id).select(
-        "-password"
-    )
-
-    if (!createdUser) {
-        throw new ApiError(500, "Something went wrong while registering the user")
-    }
-
-    return res.status(201).json(
-        new ApiResponse(200, createdUser, "User registered Successfully")
-    )
 
 })
-
-
-
-
-
 export {
-    registerUser,
+    orderCreated,
 }
